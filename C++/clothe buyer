@@ -1,0 +1,65 @@
+#include<iostream.h>
+#include<conio.h>
+#include<string.h>
+#include<stdio.h>
+class clothing
+{ char code[20],type[20],material[50];
+   int size;
+   float price;
+   void calc_price()
+   { if(strcmp(material,"cotton")==0)
+     {if(strcmp(type,"trouser")==0)
+       price=1500;
+       else if(strcmp(type,"shirt")==0)
+       price=1200;
+	}
+     if(strcmp(material,"silk")==0)
+     {if(strcmp(type,"trouser")==0)
+       price=1600-1600*(1.0/4);
+       else if(strcmp(type,"shirt")==0)
+       price=1200-1200*(1.0/4);
+      }
+  }
+public :
+clothing()
+{ strcpy(code,"NOT ASSIGNED")
+  strcpy(type,"NOT ASSIGNED")
+  strcpy(material,"NOT ASSIGNED")
+ size=0;
+ price=0;
+}
+void clothing::enter()
+{ cout<<"enter clothe code = " ;
+  gets(code);
+  cout<<"enter clothe material = " ;
+  gets(material);
+  cout<<"enter clothe type = " ;
+  gets(type);
+  cout<<"enter clothe size = " ;
+  cin>>size;
+  calc_price();
+}
+
+void clothing::show()
+{ cout<<"clothe code = " ;
+  puts(code);
+  cout<<"clothe material = " ;
+  puts(material);
+  cout<<"clothe type = " ;
+  puts(type);
+  cout<<"clothe size = "<<size;
+  cout<<"total price = "<<price;
+
+      }
+}
+void main()
+{clrscr();
+ clothing cp;
+ cp.enter();
+ cp.show();
+
+
+
+}
+getch();
+}
